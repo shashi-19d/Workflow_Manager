@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CnWpSS5HRNHJu814saDSundevbXcf0a3YkJkJx9Y1bc=",
+  "Source": "WorkManagement.API",
+  "BasePath": "_content/WorkManagement.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

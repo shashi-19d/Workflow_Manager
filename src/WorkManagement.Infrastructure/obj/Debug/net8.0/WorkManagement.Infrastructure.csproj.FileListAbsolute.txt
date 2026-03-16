@@ -1,0 +1,12 @@
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\bin\Debug\net8.0\WorkManagement.Infrastructure.deps.json
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\bin\Debug\net8.0\WorkManagement.Infrastructure.dll
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\bin\Debug\net8.0\WorkManagement.Infrastructure.pdb
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.sourcelink.json
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.dll
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\refint\WorkManagement.Infrastructure.dll
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\WorkManagement.Infrastructure.pdb
+C:\Users\shash\source\repos\Workflow_Manager\src\WorkManagement.Infrastructure\obj\Debug\net8.0\ref\WorkManagement.Infrastructure.dll
