@@ -2,5 +2,28 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/WorkManagementSystem
-/.vs/WorkManagementSystem
+# Visual Studio
+.vs/
+.vscode/
+
+# Build outputs
+**/bin/
+**/obj/
+
+# Rider/IDE
+.idea/
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Secrets & Environment
+appsettings.Development.json
+appsettings.Production.json
