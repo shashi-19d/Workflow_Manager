@@ -1,6 +1,8 @@
 ﻿using WorkManagement.Domain.Common;
-using WorkManagement.Domain.Entities;
+using WorkManagement.Domain.Enums;
 using TaskStatus = WorkManagement.Domain.Enums.TaskStatus;
+
+namespace WorkManagement.Domain.Entities;
 
 public class TaskItem : BaseEntity
 {
@@ -12,9 +14,13 @@ public class TaskItem : BaseEntity
 
     public Guid ProjectId { get; set; }
 
+    public Project Project { get; set; }   
+
     public Guid AssignedUserId { get; set; }
 
-    public ICollection<TaskComment> Comments { get; set; }
+    public User AssignedUser { get; set; } 
+
+    public ICollection<TaskComment> Comments { get; set; } = new List<TaskComment>();
 
     public TaskItem()
     {

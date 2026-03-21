@@ -25,6 +25,28 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // We will configure relationships here (next step)
+        modelBuilder.Entity<TaskItem>()
+    .HasOne(t => t.AssignedUser)
+    .WithMany(u => u.AssignedTasks)
+    .HasForeignKey(t => t.AssignedUserId)
+    .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<TaskItem>()
+    .HasOne(t => t.Project)
+    .WithMany(p => p.Tasks)
+    .HasForeignKey(t => t.ProjectId)
+    .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<TaskComment>()
+    .HasOne(c => c.TaskItem)
+    .WithMany(t => t.Comments)
+    .HasForeignKey(c => c.TaskItemId)
+    .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<TaskComment>()
+    .HasOne(c => c.User)
+    .WithMany(u => u.Comments)
+    .HasForeignKey(c => c.UserId)
+    .OnDelete(DeleteBehavior.Restrict);
     }
 }
