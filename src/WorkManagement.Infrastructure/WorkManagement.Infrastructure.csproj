@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WorkManagement.Domain\WorkManagement.Domain.csproj" />
+    <ProjectReference Include="..\WorkManagement.Application\WorkManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>
