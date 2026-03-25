@@ -13,22 +13,51 @@ public class TaskService : ITaskService
 
     public async Task<TaskResponseDto> CreateTaskAsync(CreateTaskRequestDto request)
     {
-        var task = new TaskItem
+        try
         {
-            Title = request.Title,
-            Description = request.Description,
-            ProjectId = request.ProjectId,
-            AssignedUserId = request.AssignedUserId
-        };
+            var task = new TaskItem
+            {
+                Title = request.Title,
+                Description = request.Description,
+                ProjectId = request.ProjectId,
+                AssignedUserId = request.AssignedUserId
+            };
 
-        await _taskRepository.AddAsync(task);
-        await _unitOfWork.SaveChangesAsync();
+            await _taskRepository.AddAsync(task);
+            await _unitOfWork.SaveChangesAsync();
 
-        return new TaskResponseDto
+            return new TaskResponseDto
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Status = task.Status.ToString()
+            };
+        }
+        catch (Exception ex)
         {
-            Id = task.Id,
-            Title = task.Title,
-            Status = task.Status.ToString()
-        };
+            throw new ApplicationException("Error creating task", ex);
+        }
+    }
+
+    public async Task<TaskResponseDto?> GetTaskByIdAsync(Guid id)
+    {
+        try
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+
+            if (task == null)
+                return null;
+
+            return new TaskResponseDto
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Status = task.Status.ToString()
+            };
+        }
+        catch (Exception ex)
+        {
+            throw new ApplicationException("Error fetching task", ex);
+        }
     }
 }

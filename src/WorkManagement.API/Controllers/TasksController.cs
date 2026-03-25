@@ -22,7 +22,11 @@ public class TasksController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetTaskById(Guid id)
     {
-        // Temporary placeholder (we will implement properly later)
-        return Ok();
+        var result = await _taskService.GetTaskByIdAsync(id);
+
+        if (result == null)
+            return NotFound();
+
+        return Ok(result);
     }
 }
