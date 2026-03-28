@@ -39,6 +39,8 @@ if (app.Environment.IsDevelopment())
 // 🔹 Routing
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.MapControllers();
 
 app.Run();
