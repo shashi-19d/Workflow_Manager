@@ -6,14 +6,22 @@ public class TasksController : ControllerBase
 {
     private readonly ITaskService _taskService;
 
-    public TasksController(ITaskService taskService)
+    private readonly ILogger<TasksController> _logger;
+
+    public TasksController(ITaskService taskService, ILogger<TasksController> logger)
     {
         _taskService = taskService;
+        _logger = logger;
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateTask([FromBody] CreateTaskRequestDto request)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ApiResponse<string>.Failure("Invalid request", ModelState));
+        }
+
         var result = await _taskService.CreateTaskAsync(request);
 
         var response = ApiResponse<TaskResponseDto>.SuccessResponse(
@@ -28,6 +36,8 @@ public class TasksController : ControllerBase
     public async Task<IActionResult> GetTaskById(Guid id)
     {
         var result = await _taskService.GetTaskByIdAsync(id);
+
+        _logger.LogInformation("Fetching task with Id: {TaskId}", id);
 
         if (result == null)
             return NotFound(ApiResponse<string>.Failure("Task not found"));
